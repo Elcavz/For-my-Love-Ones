@@ -64,43 +64,17 @@
 		</div>
 	</div>
 
-	
-	<div id="youtube-player"></div>
+	<div class="hidden">
+		<audio id="theme-song" controls>
+			<source src="audio/Ikaw At Ako.mp3" type="audio/mp3">
+			Your browser does not support the audio element.
+		</audio>
+	</div>
 
-	<script type="text/javascript">
-
-		// Load the YouTube IFrame API
-		var tag = document.createElement('script');
-		tag.src = '<iframe width="560" height="315" src="https://www.youtube.com/embed/3fqPpmpWNX8?si=S3AsmXLWWx3lJt8U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-		// Create a YouTube player object
-		var player;
-		function onYouTubeIframeAPIReady() {
-			player = new YT.Player('youtube-player', {
-				height: '0', // Hide the player
-				width: '0',  // Hide the player
-				videoId: '3fqPpmpWNX8', // Replace with your YouTube video ID
-				playerVars: {
-					autoplay: 0, // Don't autoplay immediately
-					controls: 0, // Hide controls
-					modestbranding: 1, // Hide YouTube logo
-					rel: 0, // Don't show related videos
-					enablejsapi: 1 // Enable JavaScript API
-				},
-				events: {
-					'onReady': onPlayerReady
-				}
-			});
-		}
-
-		// When the player is ready, delay the playback
-		function onPlayerReady(event) {
-			setTimeout(function () {
-				event.target.playVideo(); // Play the video after 3500ms
-			}, 3500);
-		}
+	<script>
+		setTimeout(() => {
+			document.getElementById('theme-song').play();
+		}, 3500);
 
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 55;
