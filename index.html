@@ -226,6 +226,12 @@
             loop: true,
             volume: 1.0
         });
+
+		document.addEventListener('click', function() {
+            if (!sound.playing()) {
+                sound.play();
+            }
+        });
 	</script>
 </body>
 
