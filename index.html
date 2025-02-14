@@ -65,7 +65,7 @@
 	</div>
 
 	<div class="hidden">
-		<audio id="theme-song" controls>
+		<audio id="theme-song" autoplay muted>
 			<source src="audio/Ikaw At Ako.mp3" type="audio/mp3">
 			Your browser does not support the audio element.
 		</audio>
@@ -73,6 +73,7 @@
 
 	<script>
 		setTimeout(() => {
+			document.getElementById('theme-song').muted = false;
 			document.getElementById('theme-song').play();
 		}, 3500);
 
