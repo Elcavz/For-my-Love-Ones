@@ -224,7 +224,7 @@
             src: ['audio/Ikaw At Ako.mp3'],
             autoplay: true,
             loop: true,
-            volume: 1.0
+            volume: 0
         });
 
 		document.addEventListener('click', function() {
@@ -232,6 +232,10 @@
                 sound.play();
             }
         });
+
+		setTimeout(function() {
+            sound.volume(1.0);
+        }, 1000);
 	</script>
 </body>
 
